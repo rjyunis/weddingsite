@@ -268,9 +268,22 @@
         .heart {
             color: #ff6b6b;
         }
+         .two-blocks {
+            display: flex;
+            gap: 1rem;
+        }
+        .two-blocks > div {
+            flex: 1; /* each column takes equal width */
+        }
+
 
         /* Responsive design */
         @media (max-width: 768px) {
+
+            .two-blocks {
+              flex-direction: column; /* stack vertically */
+            }
+
             header h1 {
                 font-size: 2.5rem;
             }
@@ -339,14 +352,20 @@
     <section id="story" class="story">
         <h2>Our Story</h2>
         <div class="story-content">
+        <div class="two-blocks">
+            <div>
 			<p><b>Ramsey's Side of the Story</b></p>
             <p>I met Tiffany shortly after moving to Orange County in the summer of 2023. I had just joined the young adult ministry at Holy Family in Orange, CA, and noticed Tiffany the first time I saw her. Immediately, it was clear that she was the glue that held the group together. She was kind, a strong leader, and had a deep knowledge of the faith. I couldn’t help but be drawn in to get to know her better.</p> 
 			<p>Eventually, I got the chance to work with her more closely to plan things with our ministry and friends. Seeing how seriously Tiffany took “doing things right” while filling evenings of planning with her laughter and expressions of joy were the highlights of many weeks. More and more, looking forward to seeing friends meant looking forward to seeing her.</p> 
 			<p>As I came to know her better, I saw that we believed in the same simple love, as well as what we both wanted to give and get from our eventual spouse. Eventually, when the time was finally right, I worked up the courage to find out something we had both known for a long time. That we both had fallen in love with each other. </p>
 			<p>There is so much of our story not written here that I cherish daily. So many moments big and small. It is impossible to write them all. Some are best saved for later laughter with you, our dear friends. Some are impossible to share. You had to be there. Tiffany, I love you.</p>
             <br/><br/><br/>
+            </div>
+            <div>
             <p><b>Tiffany's Side of the Story</b></p>
 			<p>Suspendisse in orci enim. Donec sed ligula in lacus venenatis egestas. Suspendisse potenti. Vivamus luctus felis in sem elementum tristique. Sed condimentum ullamcorper quam, sit amet tristique nisl tincidunt sed. Nulla consequat est ac ipsum tempus imperdiet.</p>
+			</div>
+        </div>
         </div>
     </section>
 
@@ -357,27 +376,27 @@
                 <div class="detail-icon">📅</div>
                 <h3>Ceremony</h3>
                 <p>Saturday, June 27, 2026</p>
-                <p>Time: 10:00 AM</p>
+                <p>Time: 11:00 AM</p>
             </div>
             <div class="detail-card">
                 <div class="detail-icon">🎉</div>
                 <h3>Reception</h3>
                 <p>Saturday, June 27, 2026</p>
-                <p>Time: 5:00 PM</p>
-                <p>Location: TBD</p>
+                <p>Time: 5:30 PM</p>
             </div>
             <div class="detail-card">
                 <div class="detail-icon">📍</div>
                 <h3>Ceremony Location</h3>
                 <p>Blessed Sacrament Church</p>
+                <p>14072 Olive St.</p>
                 <p>Westminster, California</p>
             </div>
             <div class="detail-card">
                 <div class="detail-icon">🏰</div>
                 <h3>Reception Location</h3>
-                <p>The Garden Venue</p>
-                <p>1234 Celebration Way</p>
-                <p>Huntington Beach, California</p>
+                <p>Aliso Viejo Ranch</p>
+                <p>100 Park Ave.</p>
+                <p>Aliso Viejo, California</p>
             </div>
         </div>
     </section>
