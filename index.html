@@ -275,6 +275,14 @@
         .two-blocks > div {
             flex: 1; /* each column takes equal width */
         }
+        /* add divider */
+        .two-blocks > div:first-child {
+            border-right: 1px solid #ccc;
+            padding-right: 2rem;
+        }
+        .two-blocks > div:last-child {
+            padding-left: 2rem;
+        }
 
 
         /* Responsive design */
@@ -282,6 +290,16 @@
 
             .two-blocks {
               flex-direction: column; /* stack vertically */
+            }
+            .two-blocks > div:first-child {
+                border-right: none;   /* remove line when stacked */
+                border-bottom: 1px solid #ccc;
+                padding-right: 0;
+                padding-bottom: 2rem;
+            }
+            .two-blocks > div:last-child {
+                padding-top: 2rem;
+                padding-left: 0;
             }
 
             header h1 {
@@ -359,7 +377,6 @@
 			<p>Eventually, I got the chance to work with her more closely to plan things with our ministry and friends. Seeing how seriously Tiffany took “doing things right” while filling evenings of planning with her laughter and expressions of joy were the highlights of many weeks. More and more, looking forward to seeing friends meant looking forward to seeing her.</p> 
 			<p>As I came to know her better, I saw that we believed in the same simple love, as well as what we both wanted to give and get from our eventual spouse. Eventually, when the time was finally right, I worked up the courage to find out something we had both known for a long time. That we both had fallen in love with each other. </p>
 			<p>There is so much of our story not written here that I cherish daily. So many moments big and small. It is impossible to write them all. Some are best saved for later laughter with you, our dear friends. Some are impossible to share. You had to be there. Tiffany, I love you.</p>
-            <br/><br/><br/>
             </div>
             <div>
             <p><b>Tiffany's Side of the Story</b></p>
