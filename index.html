@@ -85,7 +85,7 @@
             color: #c99e66;
         }
 
-        /* Nav container and hamburger */
+        /* Navigation container */
         .nav-container {
             display: flex;
             justify-content: center;
@@ -93,44 +93,62 @@
             position: relative;
         }
 
+        /* Hamburger button */
         .menu-toggle {
             display: none;
-            font-size: 1.8rem;
+            font-size: 2rem;
             cursor: pointer;
-            padding: 15px 20px;
-            position: absolute;
-            left: 20px;
+            padding: 12px 16px;
+            position: fixed; /* stays visible on scroll */
+            top: 15px;
+            right: 20px;
+            z-index: 2001; /* ensure it's above the menu */
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 6px;
             color: #4a4a4a;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
         }
 
-        /* Mobile menu hidden by default */
+        /* Base nav list */
         #nav-links {
             transition: max-height 0.4s ease;
         }
 
+        /* Mobile behavior */
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
 
             #nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 100%;
+                background: white;
                 flex-direction: column;
+                align-items: center;
                 overflow: hidden;
                 max-height: 0;
-                background: white;
-                width: 100%;
+                z-index: 2000;
                 box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                transition: max-height 0.4s ease;
             }
 
             #nav-links.show {
-                max-height: 300px; /* enough to show all links */
+                max-height: 300px;
+                padding-top: 60px; /* space so it doesn't overlap the button */
             }
 
             nav ul li {
                 padding: 15px 0;
                 border-bottom: 1px solid #eee;
+                width: 100%;
+                text-align: center;
             }
         }
+
 
 
         /* Section styles */
@@ -363,9 +381,7 @@
 
     <nav>
     <div class="nav-container">
-        <div class="menu-toggle" id="mobile-menu">
-            ☰
-        </div>
+    <div class="menu-toggle" id="mobile-menu">❤</div>
         <ul id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#details">Details</a></li>
