@@ -85,6 +85,54 @@
             color: #c99e66;
         }
 
+        /* Nav container and hamburger */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 15px 20px;
+            position: absolute;
+            left: 20px;
+            color: #4a4a4a;
+        }
+
+        /* Mobile menu hidden by default */
+        #nav-links {
+            transition: max-height 0.4s ease;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            #nav-links {
+                flex-direction: column;
+                overflow: hidden;
+                max-height: 0;
+                background: white;
+                width: 100%;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            #nav-links.show {
+                max-height: 300px; /* enough to show all links */
+            }
+
+            nav ul li {
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+        }
+
+
         /* Section styles */
         section {
             padding: 80px 20px;
@@ -314,13 +362,18 @@
     </header>
 
     <nav>
-        <ul>
+    <div class="nav-container">
+        <div class="menu-toggle" id="mobile-menu">
+            ☰
+        </div>
+        <ul id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#details">Details</a></li>
             <li><a href="#story">Our Story</a></li>
             <li><a href="#rsvp">RSVP</a></li>
         </ul>
-    </nav>
+    </div>
+</nav>
 
     <section id="details" class="details">
         <h2>Wedding Details</h2>
@@ -428,6 +481,12 @@
                 });
             });
         });
+
+        // Mobile hamburger toggle
+        document.getElementById('mobile-menu').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('show');
+        });
+
     </script>
 </body>
 </html>
