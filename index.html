@@ -18,7 +18,6 @@ html, body {
 }
 
 
-/* iframe becomes your "document block" */
 #cva {
 	position: relative;
     width: 100%;
@@ -32,11 +31,11 @@ html, body {
     left: 0;
     right: 0;
     bottom: 0;
-    aspect-ratio: 100;       /* n pixels */
+    aspect-ratio: 100;       
     background: #faf1e1;
     pointer-events: none;
 }
-#cvaframe {
+#cvaiframe {
    display: block;
 	margin: auto;
 	width: 60%; 
@@ -44,12 +43,30 @@ html, body {
 	border: none; 
 	padding: 0;
 }
+@media (max-width: 768px) {
+	#cva {
+		height: 1553px;
+	}
+	#cva::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;       
+    background: #faf1e1;
+    pointer-events: none;
+}
+    #cvaiframe {
+        width: 100%;
+    }
+}
 </style>
 </head>
 <body>
 
 <div id="cva">
-  <iframe id="cvaframe" loading="eager" src="https://www.canva.com/design/DAHGmyEsC0o/ChtlDqFoOb5fIiZzEOgOYw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+  <iframe id="cvaiframe" loading="eager" src="https://www.canva.com/design/DAHGmyEsC0o/ChtlDqFoOb5fIiZzEOgOYw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
 </div>
 
 <div style="background: #faf1e1; height: 750px;">
