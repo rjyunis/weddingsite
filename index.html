@@ -74,16 +74,45 @@ html, body {
 	}
 }
 </style>
+
 </head>
-<body>
+<body onload="setSite()">
 
 <div id="cva">
-  <iframe id="cvaiframe" loading="eager" src="https://www.canva.com/design/DAHGmyEsC0o/ChtlDqFoOb5fIiZzEOgOYw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+  <iframe id="cvaiframe" loading="eager" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
 </div>
 
 <div style="background: #faf1e1; height: 750px;">
 <iframe id="rsvp" src="https://ramsey-and-tiffany.anrsvp.com/?embed=true"></iframe>
 </div>
+
+<script>
+
+function isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches;
+}
+
+function setSite() {
+    var sites = ['https://www.canva.com/design/DAHGmyEsC0o/ChtlDqFoOb5fIiZzEOgOYw/view?embed',  // desktop
+                 'https://www.canva.com/design/DAHLxQOtovs/WN6HHf0i7faHB7VkK76DrQ/view?embed']  // mobile
+    
+	
+	if (!isMobile())
+    {
+	  document.getElementById('cvaiframe').src = sites[0];
+	  console.log("hi, mom!");
+	}
+	else 
+	{
+	  document.getElementById('cvaiframe').src = sites[1];
+	  console.log("hi, mom's phone!");
+	}
+	
+	
+}
+
+
+</script>
 
 </body>
 </html>
