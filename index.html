@@ -40,7 +40,7 @@ html, body {
     left: 0;
     right: 0;
     top: 0;
-    height: 10px;       
+    height: 5px;       
     background: #faf1e1;
 }
 #cvaiframe {
@@ -62,7 +62,7 @@ html, body {
 
 @media (max-width: 768px) {
 	#cva {
-		aspect-ratio: 0.0865;
+		aspect-ratio: 0.08655;
 	}
 	#cva::after {
     content: "";
@@ -85,8 +85,17 @@ html, body {
 /* Tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
 	#cva {
-		aspect-ratio: 0.0865;
+		aspect-ratio: 0.0864;
 	}
+	#cva::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 20px;       
+    background: #faf1e1;
+}
 	#cva::after {
 		content: "";
 		position: absolute;
